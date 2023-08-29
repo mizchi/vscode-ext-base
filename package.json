@@ -1,0 +1,36 @@
+{
+  "name": "vscode-ext-base",
+  "version": "1.0.0",
+  "description": "vscode ext",
+  "engines": {
+    "vscode": "^1.22.0"
+  },
+  "main": "./out/index.js",
+  "scripts": {
+    "build": "esbuild --bundle --minify --outdir=out --sourcemap src/index.ts",
+    "watch": "esbuild --bundle --minify --outdir=out --sourcemap --watch src/index.ts",
+    "package": "vsce package --no-dependencies",
+    "publish": "dotenv -e .env pnpm vsce publish --no-dependencies",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "activationEvents": [],
+  "contributes": {
+    "configuration": {}
+  },
+  "keywords": [],
+  "author": "miz404@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@vscode/test-electron": "^2.3.4",
+    "@vscode/vsce": "^2.20.1",
+    "dotenv-cli": "^7.3.0",
+    "vscode": "^1.1.37"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mizchi/vscode-ext-base"
+  },
+  "dependencies": {
+    "esbuild": "^0.19.2"
+  }
+}
